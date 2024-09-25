@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ resource_name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ resource_name }}
+  template:
+    metadata:
+      labels:
+        app: {{ resource_name }}
+    spec:
+      containers:
+      - name: {{ resource_name }}
+        image: nginx:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

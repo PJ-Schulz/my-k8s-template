@@ -1,0 +1,12 @@
+resource_name:
+  type: str
+  help: What is the name for the resources which will be applied in k8s?
+  default: my-app
+
+_exclude:
+ - "*"
+ - "!argo"
+ - "!.copier-answers.yml"
+
+_skip_if_exists:
+  - argo/config/*
